@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 j_grid = 1000       # number of grid points
 n_grid = 3001       # number of time steps n
 
-C = 3/2            # CFL condition = c*Δt/Δy
+C = 1/2            # CFL condition = c*Δt/Δy
 
 source_1 = 400      # source location of EM wave Case 1
 source_2 = 10       # source location of EM wave Case 2
