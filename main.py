@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 j_grid = 1000       # number of grid points
 n_grid = 3001       # number of time steps n
 
-C = 1/4             # CFL condition = c*Δt/Δy
+C = 3/2            # CFL condition = c*Δt/Δy
 
 source_1 = 400      # source location of EM wave Case 1
 source_2 = 10       # source location of EM wave Case 2
-source = source_2
+source = source_1
 
 Ez = np.zeros(j_grid)       # Electric field (E_z)
 Hx = np.zeros(j_grid - 1)   # Magnetic field (H_x)
@@ -32,7 +32,7 @@ for n in range(n_grid):                     # loop over time
     source_function_1 = np.sin(2 * np.pi * n * C / 20)        # source funtion Case 1 
     source_function_2 = np.exp(- ((n / 30) - 5) ** 2)         # source funtion Case 2
 
-    Ez[source] = source_function_2
+    Ez[source] = source_function_1
 
     if n == 500 or n == 1000 or n== 3000:       # PLOT at timesteps 500, 1000 and 3000
         plt.figure()
